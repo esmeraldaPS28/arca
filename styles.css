@@ -1,0 +1,1133 @@
+*{
+    box-sizing: border-box; /* Incluye bordes y rellenos en el ancho y alto total */
+    margin: 0;              /* Elimina los márgenes predeterminados de la página */
+    padding: 0;             /* Elimina los rellenos internos predeterminados */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía principal limpia y moderna */
+    color: #e2e8f0;                 /* Color de texto base claro para alto contraste */
+    background-color: #0b0714;      /* Fondo general oscuro y profundo estilo cinematográfico */
+    line-height: 1.6;               /* Espaciado de línea cómodo para la lectura */
+}
+
+/* --------------------------------------------------------------------
+   BARRA SUPERIOR DE CONTACTO
+   -------------------------------------------------------------------- */
+.top-bar {
+    background-color: #150a24;              /* Fondo morado/negro muy oscuro */
+    color: #f1f5f9;                         /* Color de texto claro */
+    font-size: 0.82rem;                     /* Tamaño de fuente pequeño y sutil */
+    padding: 0.5rem 2rem;                   /* Relleno interno superior/inferior y lateral */
+    border-bottom: 1px solid rgba(236, 72, 153, 0.2); /* Línea divisoria inferior con tono rosa/magenta sutil */
+}
+
+.top-bar-container {
+    max-width: 1200px;     /* Ancho máximo estructurado para mantener simetría */
+    margin: 0 auto;        /* Centra horizontalmente el contenedor */
+    display: flex;         /* Activa el diseño flexible */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos internos */
+    align-items: center;   /* Centra verticalmente los elementos */
+}
+
+.top-contacts {
+    display: flex;         /* Distribuye los datos de contacto en fila horizontal */
+    gap: 2rem;             /* Separación horizontal entre los elementos */
+}
+
+.top-item.whatsapp {
+    color: #34d399;        /* Color verde esmeralda brillante para WhatsApp */
+}
+
+/* ======================================================================
+   BARRA DE NAVEGACIÓN RESPONSIVA
+   ====================================================================== */
+.navbar {
+    background-color: #12091f; /* Fondo oscuro sólido para el menú de navegación */
+    border-bottom: 1px solid #2e1a47; /* Borde inferior en tono violeta oscuro */
+    position: sticky;          /* Fija la barra en la parte superior al hacer scroll */
+    top: 0;                    /* Posición de anclaje exacto en la parte superior */
+    z-index: 1000;             /* Asegura que la barra esté siempre por encima de otros elementos */
+    padding: 0.8rem 1.5rem;    /* Relleno interior de la barra de navegación */
+}
+
+.nav-container {
+    max-width: 1200px;         /* Ancho máximo alineado con el resto del sitio */
+    margin: 0 auto;            /* Centra el contenedor del menú */
+    display: flex;             /* Modelo flexible */
+    justify-content: space-between; /* Separa el logotipo de los enlaces del menú */
+    align-items: center;       /* Alinea verticalmente al centro */
+    flex-wrap: wrap;           /* Permite que los elementos bajen si falta espacio */
+    gap: 1rem;                 /* Espaciado predeterminado */
+}
+
+.nav-brand {
+    display: flex;             /* Contenedor flexible para la marca/logo */
+    align-items: center;       /* Centra verticalmente el logotipo */
+}
+
+.brand-logo-img {
+    height: 55px;              /* Altura fija estándar para el logotipo institucional */
+    width: auto;               /* Ancho proporcional automático */
+    object-fit: contain;       /* Evita deformaciones en la imagen */
+    display: block;            /* Elimina espacios fantasma inferiores */
+}
+
+.nav-links {
+    display: flex;             /* Organiza los enlaces de navegación en línea */
+    align-items: center;       /* Centra verticalmente */
+    gap: 1.5rem;               /* Espacio de separación entre cada opción del menú */
+    flex-wrap: wrap;           /* Adaptable en pantallas chicas */
+}
+
+.nav-links a {
+    text-decoration: none;     /* Quita el subrayado predeterminado de los enlaces */
+    color: #cbd5e1;            /* Color de texto gris claro */
+    font-weight: 600;          /* Seminegrita para mejor visibilidad */
+    font-size: 0.9rem;         /* Tamaño de fuente adecuado */
+    transition: color 0.2s;    /* Transición suave al cambiar de color */
+}
+
+.nav-links a:hover {
+    color: #ec4899;            /* Cambia a rosa neón característico al pasar el cursor */
+}
+
+.btn-nav-login {
+    background-color: #ec4899; /* Fondo magenta/rosa neón para el botón de fans */
+    color: white !important;   /* Texto blanco forzado */
+    padding: 8px 16px;         /* Relleno interior del botón */
+    border-radius: 6px;        /* Esquinas redondeadas */
+    transition: background-color 0.2s, transform 0.2s; /* Transición suave */
+}
+
+.btn-nav-login:hover {
+    background-color: #db2777; /* Rosa más oscuro al pasar el cursor */
+    transform: scale(1.03);    /* Ligero efecto de escala */
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 0.6rem 1rem;  /* Reduce el padding en pantallas móviles pequeñas */
+    }
+    .nav-container {
+        justify-content: center; /* Centra los elementos del menú en móviles */
+    }
+    .nav-links {
+        gap: 1rem;             /* Reduce el espacio entre enlaces */
+        justify-content: center; /* Centra los enlaces */
+    }
+}
+
+/* --------------------------------------------------------------------
+   SECCIÓN HERO (DOS COLUMNAS CON COLLAGE)
+   -------------------------------------------------------------------- */
+.hero-section {
+    background: linear-gradient(135deg, #180929 0%, #3b0764 50%, #831843 100%); /* Degradado profundo inspirado en Nimona */
+    color: white;              /* Texto general en blanco para alto contraste */
+    padding: 5rem 2rem;        /* Relleno superior/inferior amplio y lateral */
+    overflow: hidden;          /* Oculta desbordamientos */
+}
+
+.hero-container {
+    max-width: 1200px;         /* Ancho máximo del contenedor principal */
+    margin: 0 auto;            /* Centra el contenedor */
+    display: grid;             /* Utiliza CSS Grid para organizar las columnas */
+    grid-template-columns: 1.1fr 0.9fr; /* Texto ligeramente más ancho que el collage */
+    gap: 3rem;                 /* Espacio de separación entre columnas */
+    align-items: center;       /* Alinea verticalmente al centro */
+}
+
+@media (max-width: 900px) {
+    .hero-container {
+        grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas medianas/móviles */
+    }
+}
+
+.hero-tag {
+    display: inline-block;     /* Permite aplicar padding y márgenes como bloque */
+    background-color: rgba(236, 72, 153, 0.25); /* Fondo magenta translúcido */
+    border: 1px solid rgba(244, 114, 182, 0.4); /* Borde rosa neón sutil */
+    color: #f472b6;            /* Texto rosa claro brillante */
+    padding: 6px 16px;         /* Relleno interior */
+    border-radius: 20px;       /* Bordes redondeados estilo píldora */
+    font-size: 0.85rem;        /* Tamaño de fuente compacto */
+    font-weight: 600;          /* Seminegrita */
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+    margin-bottom: 1.5rem;     /* Margen inferior */
+}
+
+.hero-text-side h1 {
+    font-size: 2.8rem;         /* Tamaño de fuente grande para el título principal */
+    font-weight: 800;          /* Grosor muy marcado */
+    margin-bottom: 1rem;       /* Espacio inferior */
+    letter-spacing: -0.5px;    /* Reduce ligeramente el espacio entre letras */
+    line-height: 1.2;          /* Altura de línea compacta */
+    color: #fff1f2;            /* Tono blanco rosado suave */
+}
+
+.hero-text-side p {
+    font-size: 1.1rem;         /* Tamaño de fuente cómodo para la descripción */
+    color: #fbcfe8;            /* Color rosa pálido muy legible */
+    margin-bottom: 2rem;       /* Espacio inferior */
+    line-height: 1.6;          /* Altura de línea legible */
+}
+
+.hero-cta-box {
+    background: rgba(24, 9, 41, 0.6); /* Fondo oscuro semitransparente con tinte morado */
+    border: 1px solid rgba(236, 72, 153, 0.3); /* Borde magenta translúcido */
+    padding: 1.8rem;           /* Relleno interno */
+    border-radius: 12px;       /* Bordes redondeados */
+    backdrop-filter: blur(8px); /* Efecto de desenfoque de cristal esmerilado */
+}
+
+.btn-orange {
+    display: inline-block;     /* Permite dimensiones en enlaces */
+    background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); /* Degradado magenta/rosa neón insignia */
+    color: white;              /* Texto blanco */
+    padding: 14px 28px;        /* Relleno interior generoso */
+    border-radius: 8px;        /* Bordes redondeados */
+    text-decoration: none;     /* Quita subrayado */
+    font-weight: 700;          /* Negrita */
+    font-size: 1.05rem;        /* Tamaño destacado */
+    box-shadow: 0 4px 20px rgba(236, 72, 153, 0.5); /* Sombra magenta difuminada */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transiciones suaves */
+    margin-bottom: 1.2rem;     /* Espacio inferior */
+}
+
+.btn-orange:hover {
+    transform: translateY(-2px); /* Eleva ligeramente el botón al pasar el cursor */
+    box-shadow: 0 6px 25px rgba(236, 72, 153, 0.8); /* Aumenta intensidad de sombra */
+}
+
+.hero-benefits {
+    display: flex;             /* Organiza los beneficios en línea flexible */
+    flex-wrap: wrap;           /* Salto de línea automático */
+    gap: 15px;                 /* Espacio entre beneficios */
+    font-size: 0.9rem;         /* Tamaño estándar */
+    color: #fbcfe8;            /* Rosa pálido */
+    font-weight: 500;          /* Peso medio */
+}
+
+/* Estilos del Collage de Imágenes */
+.image-collage {
+    display: flex;             /* Organiza los elementos en columna */
+    flex-direction: column;    /* Dirección vertical */
+    gap: 15px;                 /* Espacio entre imágenes */
+    background: rgba(30, 10, 50, 0.4); /* Fondo translúcido sutil */
+    padding: 20px;             /* Relleno interior */
+    border-radius: 20px;       /* Bordes redondeados del contenedor */
+    border: 1px solid rgba(236, 72, 153, 0.2); /* Borde sutil magenta */
+}
+
+.collage-main img {
+    width: 100%;               /* Ancho completo */
+    height: 240px;             /* Altura fija para la imagen principal */
+    object-fit: cover;         /* Recorta proporcionalmente sin deformar */
+    border-radius: 12px;       /* Bordes redondeados */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5); /* Sombra de profundidad */
+}
+
+.collage-sub {
+    display: grid;             /* Cuadrícula para las dos imágenes inferiores */
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 15px;                 /* Espacio entre las secundarias */
+}
+
+.collage-sub img {
+    width: 100%;               /* Ancho completo */
+    height: 140px;             /* Altura fija para secundarias */
+    object-fit: cover;         /* Recorte proporcional */
+    border-radius: 12px;       /* Bordes redondeados */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5); /* Sombra de profundidad */
+}
+
+/* Clases específicas para el formulario de informes */
+.hero-title-custom {
+    font-size: 2.5rem;         /* Tamaño de título personalizado */
+    margin-bottom: 1rem;       /* Margen inferior */
+    color: #fff1f2;            /* Tono claro */
+}
+
+.hero-desc-custom {
+    color: #fbcfe8;            /* Color secundario rosa claro */
+    font-size: 1rem;           /* Tamaño legible */
+    margin-bottom: 1.5rem;     /* Margen inferior */
+}
+
+.hero-subtitle-custom {
+    font-size: 0.95rem;        /* Subtítulo */
+    font-weight: 600;          /* Seminegrita */
+    color: #f472b6;            /* Rosa brillante */
+    margin-bottom: 0.8rem;     /* Margen inferior */
+}
+
+.hero-benefits-column {
+    display: flex;             /* Flexible vertical */
+    flex-direction: column;    /* Apilado vertical */
+    gap: 8px;                  /* Espaciado ajustado */
+}
+
+.cbtis-hero-form-card {
+    background-color: #150a24; /* Fondo oscuro sólido para la tarjeta del formulario */
+    border: 1px solid rgba(236, 72, 153, 0.3); /* Borde magenta */
+    padding: 2.2rem;           /* Relleno interno amplio */
+    border-radius: 16px;       /* Bordes redondeados marcados */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Sombra elegante flotante */
+    width: 100%;               /* Ancho completo disponible */
+    max-width: 440px;          /* Ancho máximo de la tarjeta */
+    margin: 0 auto;            /* Centrado horizontal */
+}
+
+.form-card-title {
+    color: #f472b6;            /* Color rosa brillante */
+    font-size: 1.25rem;        /* Mediano destacado */
+    font-weight: 700;          /* Negrita */
+    margin-bottom: 1rem;       /* Margen inferior */
+    text-align: center;        /* Centrado */
+}
+
+.form-group-margin {
+    margin-bottom: 1rem;       /* Espacio inferior estándar entre campos */
+}
+
+.form-control-input {
+    width: 100%;               /* Ancho completo */
+    background-color: #0b0714; /* Fondo interno oscuro */
+    color: #f1f5f9;            /* Texto claro */
+    border: 1px solid #4c1d95; /* Borde violeta */
+    border-radius: 8px;        /* Bordes redondeados */
+    padding: 10px 14px;        /* Relleno interior cómodo */
+    font-size: 0.9rem;         /* Tamaño de letra interno */
+    outline: none;             /* Sin borde de enfoque por defecto */
+    transition: border-color 0.2s;
+}
+
+.form-control-input:focus {
+    border-color: #ec4899;     /* Cambia a rosa neón al enfocar */
+}.form-control-select {
+    width: 100%;               /* Ancho completo */
+    border: 1px solid #4c1d95; /* Borde violeta oscuro temático */
+    border-radius: 8px;        /* Bordes redondeados */
+    padding: 10px 14px;        /* Relleno interior */
+    font-size: 0.9rem;         /* Tamaño de fuente */
+    background: #0b0714;       /* Fondo oscuro profundo */
+    color: #f1f5f9;            /* Color de texto claro para opciones */
+    outline: none;             /* Quita contorno */
+    transition: border-color 0.2s;
+}
+
+.form-date-label {
+    font-size: 0.78rem;        /* Letra pequeña para etiquetas de fecha */
+    color: #f472b6;            /* Rosa brillante para destacar etiquetas */
+    display: block;            /* Ocupa su propia línea */
+    margin-bottom: 2px;        /* Margen inferior mínimo */
+}
+
+.form-control-date {
+    width: 100%;               /* Ancho completo */
+    border: 1px solid #4c1d95; /* Borde violeta */
+    border-radius: 8px;        /* Bordes redondeados */
+    padding: 8px 14px;         /* Relleno interior */
+    font-size: 0.9rem;         /* Tamaño de fuente */
+    background: #0b0714;       /* Fondo oscuro */
+    color: #f1f5f9;            /* Color de texto interno claro */
+    outline: none;             /* Quita contorno */
+    transition: border-color 0.2s;
+}
+
+.form-control-textarea {
+    width: 100%;               /* Ancho completo */
+    border: 1px solid #4c1d95; /* Borde violeta */
+    border-radius: 8px;        /* Bordes redondeados */
+    padding: 10px 14px;        /* Relleno interior */
+    font-size: 0.9rem;         /* Tamaño de fuente */
+    background: #0b0714;       /* Fondo oscuro */
+    color: #f1f5f9;            /* Texto claro */
+    outline: none;             /* Quita contorno */
+    font-family: inherit;      /* Hereda tipografía general */
+    transition: border-color 0.2s;
+}
+
+/* ======================================================================
+   CORRECCIÓN DEFINITIVA PARA LA CASILLA Y EL TEXTO DE ACEPTAR TÉRMINOS
+   ====================================================================== */
+.form-group-checkbox {
+    margin-bottom: 1.2rem;     /* Espacio inferior */
+    display: flex;             /* Contenedor flexible */
+    flex-direction: row !important; /* Fuerza dirección horizontal estricta */
+    align-items: flex-start !important; /* Alinea arriba */
+    justify-content: flex-start !important; /* Alinea a la izquierda */
+    gap: 10px;                 /* Espacio horizontal entre cuadro y texto */
+    text-align: left;          /* Alineación izquierda */
+    width: 100%;               /* Ancho completo */
+}
+
+.form-checkbox-input {
+    width: 18px !important;    /* Ancho fijo forzado para el checkbox */
+    height: 18px !important;   /* Alto fijo forzado */
+    min-width: 18px;           /* Evita compresión */
+    cursor: pointer;           /* Cambia cursor a mano */
+    margin-top: 2px;           /* Ajuste vertical fino con la primera línea */
+    flex-shrink: 0;            /* Impide deformación */
+    accent-color: #ec4899;     /* Color de acento rosa neón para el checkbox nativo */
+    appearance: auto;          /* Restaura el comportamiento visual nativo */
+    -webkit-appearance: checkbox; /* Compatibilidad WebKit */
+}
+
+.form-checkbox-label {
+    font-size: 0.78rem !important; /* Letra pequeña legible para textos legales */
+    color: #fbcfe8 !important;     /* Rosa pálido muy legible sobre fondo oscuro */
+    line-height: 1.35 !important;  /* Altura de línea compacta */
+    cursor: pointer;               /* Cursor interactivo */
+    display: inline-block !important; /* Comportamiento en línea */
+    width: auto !important;        /* Ancho automático */
+    flex: 1;                       /* Ocupa el resto del espacio disponible */
+}
+
+.form-submit-btn {
+    background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); /* Degradado magenta/rosa neón */
+    width: 100%;                   /* Ancho completo */
+    border-radius: 8px;            /* Bordes redondeados */
+    padding: 12px;                 /* Relleno interior */
+    font-weight: 700;              /* Negrita */
+    color: white;                  /* Texto blanco */
+    border: none;                  /* Sin bordes */
+    cursor: pointer;               /* Cursor de mano */
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4); /* Sombra difuminada rosa */
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s; /* Transición suave */
+}
+
+.form-submit-btn:hover {
+    transform: translateY(-2px);   /* Ligera elevación al pasar el cursor */
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.6); /* Sombra más intensa */
+}
+
+.cbtis-hero-form-card input:focus, 
+.cbtis-hero-form-card select:focus, 
+.cbtis-hero-form-card textarea:focus {
+    border-color: #ec4899 !important; /* Cambia el borde a rosa neón al enfocar */
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.25); /* Brillo sutil magenta alrededor */
+}
+
+/* ======================================================================
+   ESTILOS DE OFERTA EDUCATIVA / PERSONAJES CON IMÁGENES
+   ====================================================================== */
+.careers-section {
+    padding: 5rem 2rem;            /* Espaciado superior/inferior */
+    background-color: #0b0714;     /* Fondo oscuro principal */
+}
+
+.section-container {
+    max-width: 1200px;             /* Ancho máximo centrado */
+    margin: 0 auto;                /* Centrado horizontal */
+}
+
+.section-header {
+    text-align: center;            /* Centrado de títulos de sección */
+    margin-bottom: 3.5rem;         /* Espacio inferior */
+}
+
+.section-header h2 {
+    font-size: 2.2rem;             /* Título grande */
+    color: #fff1f2;                /* Tono claro rosado */
+    margin-bottom: 0.5rem;         /* Espacio con subtítulo */
+}
+
+.section-header p {
+    color: #fbcfe8;                /* Rosa secundario suave */
+    font-size: 1.05rem;            /* Tamaño legible */
+}
+
+.careers-grid {
+    display: grid;                 /* Cuadrícula CSS adaptable */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Columnas responsivas */
+    gap: 2rem;                     /* Espacio entre tarjetas */
+}
+
+.career-card {
+    background-color: #150a24;     /* Fondo de tarjeta oscuro */
+    border: 1px solid #4c1d95;     /* Borde violeta sutil */
+    border-radius: 12px;           /* Esquinas redondeadas */
+    overflow: hidden;              /* Oculta desbordamientos internos */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; /* Transiciones suaves */
+}
+
+.career-card:hover {
+    transform: translateY(-5px);   /* Eleva la tarjeta al pasar el cursor */
+    box-shadow: 0 15px 30px rgba(236, 72, 153, 0.15); /* Acentúa la sombra con tono magenta */
+    border-color: #ec4899;         /* Resalta el borde en rosa neón */
+}
+
+.career-img-container {
+    width: 100%;                   /* Ancho completo */
+    height: 160px;                 /* Altura fija de imagen */
+    overflow: hidden;              /* Oculta desbordamientos */
+}
+
+.career-img-container img {
+    width: 100%;                   /* Ancho adaptado */
+    height: 100%;                  /* Alto adaptado */
+    object-fit: cover;             /* Recorte proporcional */
+    transition: transform 0.3s ease; /* Transición para zoom */
+}
+
+.career-card:hover .career-img-container img {
+    transform: scale(1.05);        /* Efecto zoom in en imagen al hacer hover */
+}
+
+.career-content {
+    padding: 1.8rem;               /* Relleno interno de textos */
+}
+
+.career-content h3 {
+    font-size: 1.15rem;            /* Tamaño de título */
+    color: #fff1f2;                /* Color claro */
+    margin-bottom: 0.8rem;         /* Espacio inferior */
+    font-weight: 700;              /* Negrita */
+}
+
+.career-content p {
+    color: #fbcfe8;                /* Rosa descriptivo claro */
+    font-size: 0.9rem;             /* Tamaño estándar */
+    line-height: 1.5;              /* Altura de línea */
+}
+
+/* ======================================================================
+   ESTILOS DEL PIE DE PÁGINA (FOOTER CON REDES SOCIALES)
+   ====================================================================== */
+.footer {
+    background-color: #0b0714;     /* Fondo oscuro profundo */
+    color: #cbd5e1;                /* Texto gris claro */
+    padding: 2.5rem 2rem;          /* Relleno interior */
+    border-top: 1px solid rgba(236, 72, 153, 0.2); /* Línea superior con toque magenta */
+}
+
+.footer-container {
+    max-width: 1200px;             /* Ancho máximo alineado */
+    margin: 0 auto;                /* Centrado horizontal */
+    display: flex;                 /* Distribución flexible */
+    justify-content: space-between; /* Separa créditos de redes */
+    align-items: center;           /* Centrado vertical */
+    flex-wrap: wrap;               /* Adaptable */
+    gap: 1.5rem;                   /* Espacio entre elementos */
+}
+
+.footer-info p {
+    font-size: 0.9rem;             /* Tamaño estándar */
+    color: #f1f5f9;                /* Color legible */
+    margin-bottom: 0.3rem;         /* Espacio mínimo */
+}
+
+.footer-author {
+    font-size: 0.82rem;            /* Letra pequeña para autor */
+    color: #fbcfe8;                /* Rosa secundario sutil */
+}
+
+.footer-socials {
+    display: flex;                 /* Iconos en línea */
+    gap: 12px;                     /* Espacio entre iconos */
+}
+
+.social-icon {
+    width: 38px;                   /* Ancho fijo circular */
+    height: 38px;                  /* Alto fijo circular */
+    background: rgba(236, 72, 153, 0.1); /* Fondo translúcido magenta */
+    border: 1px solid rgba(236, 72, 153, 0.3); /* Borde sutil rosa */
+    color: #ffffff;                /* Icono blanco */
+    border-radius: 50%;            /* Círculo perfecto */
+    display: flex;                 /* Centrado interno */
+    align-items: center;           /* Centrado vertical */
+    justify-content: center;       /* Centrado horizontal */
+    text-decoration: none;         /* Sin subrayado */
+    font-weight: 700;              /* Negrita */
+    font-size: 0.95rem;            /* Tamaño del símbolo */
+    transition: background 0.2s, transform 0.2s, border-color 0.2s; /* Transiciones */
+}
+
+.social-icon:hover {
+    background: #ec4899;           /* Rosa neón al pasar cursor */
+    border-color: #ec4899;         /* Borde rosa neón */
+    transform: translateY(-3px);   /* Eleva sutilmente el icono */
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;    /* Columna en tablets y móviles */
+        text-align: center;        /* Centra textos del footer */
+    }
+    .footer-socials {
+        justify-content: center;   /* Centra iconos sociales */
+    }
+}
+
+/* ======================================================================
+   ESTILOS DE LOGIN EN PANTALLA PARTIDA - NIMONA
+   ====================================================================== */
+.cbtis-login-body {
+    margin: 0;                     /* Sin márgenes */
+    padding: 0;                    /* Sin padding */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía general */
+    background: linear-gradient(135deg, #180929 0%, #3b0764 50%, #831843 100%); /* Fondo degradado temático */
+    min-height: 100vh;             /* Altura mínima de pantalla completa */
+    display: flex;                 /* Centrado flexible */
+    justify-content: center;       /* Centrado horizontal */
+    align-items: center;           /* Centrado vertical */
+}
+
+.cbtis-login-container {
+    width: 100%;                   /* Ancho completo */
+    max-width: 1000px;             /* Ancho máximo de la tarjeta de login */
+    height: 600px;                 /* Altura fija estándar */
+    background-color: #150a24;     /* Fondo de tarjeta oscuro */
+    border: 1px solid rgba(236, 72, 153, 0.3); /* Borde magenta */
+    border-radius: 12px;           /* Bordes redondeados */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5); /* Sombra pronunciada */
+    display: grid;                 /* Pantalla dividida en cuadrícula */
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales (panel izquierdo y derecho) */
+    overflow: hidden;              /* Oculta desbordamientos */
+    margin: 2rem;                  /* Margen exterior */
+}
+
+@media (max-width: 850px) {
+    .cbtis-login-container {
+        grid-template-columns: 1fr; /* Una sola columna en dispositivos menores */
+        height: auto;               /* Altura automática */
+    }
+    .cbtis-left-panel {
+        display: none;              /* Oculta el panel izquierdo decorativo en móviles */
+    }
+}
+
+.cbtis-left-panel {
+    background: linear-gradient(135deg, #3b0764 0%, #180929 100%); /* Degradado oscuro temático */
+    color: white;                  /* Texto blanco */
+    padding: 3rem;                 /* Relleno interno */
+    display: flex;                 /* Diseño flexible */
+    flex-direction: column;        /* Apilado vertical */
+    justify-content: space-between; /* Distribuye espacio superior e inferior */
+    border-right: 1px solid rgba(236, 72, 153, 0.2);
+}
+.cbtis-illustration-box h2 {
+    font-size: 2rem;               /* Título grande */
+    font-weight: 800;              /* Negrita fuerte */
+    letter-spacing: 1px;           /* Espaciado entre letras */
+    color: #fff1f2;                /* Tono claro rosado */
+}
+/* ======================================================================
+   ESTILOS PARA SECCIONES MULTIMEDIA Y MAPA (PUNTOS 4, 5, 6 Y 11)
+   ====================================================================== */
+
+/* Contenedor general para cada bloque <article> multimedia */
+article {
+    max-width: 1200px;             /* Ancho máximo alineado con el sitio */
+    margin: 3rem auto;             /* Centrado horizontal y separación vertical */
+    padding: 2.5rem;               /* Relleno interno generoso */
+    background-color: #150a24;     /* Fondo de tarjeta oscuro temático */
+    border: 1px solid #4c1d95;     /* Borde violeta oscuro elegante */
+    border-radius: 16px;           /* Bordes redondeados */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Sombra de profundidad */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+article:hover {
+    border-color: #ec4899;         /* Resalta el borde en rosa neón al pasar el cursor */
+    box-shadow: 0 15px 35px rgba(236, 72, 153, 0.15); /* Sombra sutil magenta */
+}
+
+/* Encabezados dentro de los artículos multimedia */
+article header {
+    margin-bottom: 1.2rem;         /* Espacio inferior */
+}
+
+article header h2 {
+    font-size: 1.8rem;             /* Tamaño destacado */
+    font-weight: 700;              /* Negrita */
+    color: #fff1f2;                /* Blanco rosado suave */
+    margin-bottom: 0.3rem;         /* Espacio con fecha o subtítulo */
+}
+
+article header p {
+    font-size: 0.85rem;            /* Texto de fecha pequeño */
+    color: #f472b6;                /* Rosa brillante */
+}
+
+article > p {
+    color: #fbcfe8;                /* Texto descriptivo claro y legible */
+    font-size: 0.95rem;            /* Tamaño estándar */
+    margin-bottom: 1.5rem;         /* Espacio inferior antes del reproductor/mapa */
+}
+
+/* 4. Contenedor del video de YouTube (Responsive iframe) */
+.video-container {
+    position: relative;            /* Posicionamiento relativo para control de proporción */
+    width: 100%;                   /* Ancho completo */
+    padding-bottom: 56.25%;        /* Proporción estándar 16:9 (altura adaptable) */
+    height: 0;                     /* Altura inicial cero */
+    border-radius: 12px;           /* Bordes redondeados */
+    overflow: hidden;              /* Oculta desbordamientos */
+    background-color: #0b0714;     /* Fondo de carga oscuro */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Sombra interna */
+}
+
+.video-container iframe {
+    position: absolute;            /* Posición absoluta para llenar el contenedor 16:9 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;                     /* Sin bordes */
+    border-radius: 12px;
+}
+
+/* 5. Caja y reproductor de audio nativo */
+.embed-box {
+    background-color: #0b0714;     /* Fondo interno oscuro profundo */
+    border: 1px solid #4c1d95;     /* Borde violeta */
+    padding: 1.5rem;               /* Relleno interior */
+    border-radius: 12px;           /* Bordes redondeados */
+    text-align: center;            /* Centrado */
+}
+
+.embed-box audio {
+    width: 100%;                   /* Ancho completo adaptable del reproductor */
+    max-width: 600px;              /* Límite máximo para que no se estire demasiado en pantallas grandes */
+    outline: none;                 /* Sin contorno */
+    filter: invert(90%) hue-rotate(240deg); /* Ajuste visual opcional para oscurecer/integrar controles nativos con el modo oscuro */
+}
+
+/* 6. Contenedor del Podcast de Spotify */
+.podcast-container {
+    width: 100%;                   /* Ancho completo */
+    border-radius: 12px;           /* Bordes redondeados */
+    overflow: hidden;              /* Oculta desbordamientos */
+    background-color: #0b0714;     /* Fondo oscuro */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* 11. Contenedor del Mapa Interactivo (Google Maps) */
+.map-container {
+    width: 100%;                   /* Ancho completo */
+    border-radius: 12px;           /* Bordes redondeados */
+    overflow: hidden;              /* Oculta esquinas sobrantes del iframe */
+    background-color: #0b0714;     /* Fondo de carga oscuro */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid #4c1d95;     /* Borde violeta a juego */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 350px;                 /* Altura fija cómoda */
+    border: 0;                     /* Sin bordes */
+    display: block;                /* Elimina espacios inferiores extra */
+    filter: contrast(95%) brightness(90%); /* Suaviza ligeramente el mapa blanco tradicional para que armonice mejor con el diseño nocturno */
+}
+
+/* Ajustes responsivos para pantallas móviles en las secciones multimedia */
+@media (max-width: 768px) {
+    article {
+        padding: 1.5rem;           /* Reduce el padding en móviles */
+        margin: 2rem 1rem;         /* Márgenes laterales adaptados */
+    }
+    
+    article header h2 {
+        font-size: 1.4rem;         /* Títulos ligeramente más compactos */
+    }
+
+    .map-container iframe {
+        height: 280px;             /* Reduce la altura del mapa en pantallas chicas */
+    }
+}
+.cbtis-illustration-box h2 {
+    font-size: 2rem;               /* Título grande */
+    font-weight: 800;              /* Negrita fuerte */
+    letter-spacing: 1px;           /* Espaciado entre letras */
+    color: #fff1f2;                /* Tono claro rosado */
+}
+
+.cbtis-notices-box {
+    background: rgba(236, 72, 153, 0.1); /* Caja translúcida con tinte magenta/rosa */
+    border: 1px solid rgba(236, 72, 153, 0.2); /* Borde sutil magenta */
+    padding: 1.2rem;               /* Relleno interno */
+    border-radius: 8px;            /* Bordes redondeados */
+    margin-top: 1.5rem;            /* Margen superior */
+}
+
+.cbtis-notices-box h3 {
+    font-size: 1.1rem;             /* Título de aviso */
+    margin-bottom: 0.4rem;         /* Margen inferior */
+    color: #f472b6;                /* Rosa brillante */
+}
+
+.cbtis-notices-box p {
+    font-size: 0.85rem;            /* Texto pequeño */
+    color: #fbcfe8;                /* Rosa pálido tenue */
+    line-height: 1.4;              /* Altura de línea */
+}
+
+.cbtis-slider-dots {
+    display: flex;                 /* Indicadores de slider en fila */
+    justify-content: center;       /* Centrados */
+    gap: 8px;                      /* Espacio entre puntos */
+    margin-top: 1.5rem;            /* Margen superior */
+}
+
+.cbtis-dot {
+    width: 8px;                    /* Ancho de punto inactivo */
+    height: 8px;                   /* Alto de punto inactivo */
+    background-color: rgba(255, 255, 255, 0.4); /* Translúcido */
+    border-radius: 50%;            /* Circular */
+}
+
+.cbtis-dot.active {
+    background-color: #ec4899;     /* Rosa neón sólido para punto activo */
+    width: 24px;                   /* Más ancho simulando barra activa */
+    border-radius: 4px;            /* Bordes redondeados */
+}
+
+.cbtis-left-footer {
+    font-size: 0.72rem;            /* Letra pequeña institucional */
+    color: #fbcfe8;                /* Rosa muy claro */
+    text-align: center;            /* Centrado */
+    line-height: 1.3;              /* Altura de línea */
+}
+
+.cbtis-right-panel {
+    background-color: #150a24;     /* Panel derecho oscuro temático para el formulario */
+    border-left: 1px solid rgba(236, 72, 153, 0.2);
+    padding: 3rem 3.5rem;          /* Relleno interno amplio */
+    display: flex;                 /* Flexible */
+    flex-direction: column;        /* Vertical */
+    justify-content: center;       /* Centrado vertical */
+}
+
+.cbtis-login-wrapper {
+    width: 100%;                   /* Ancho completo */
+    max-width: 350px;              /* Ancho máximo del contenedor de login */
+    margin: 0 auto;                /* Centrado horizontal */
+}
+
+.login-back-container {
+    margin-bottom: 1.5rem;         /* Margen inferior */
+}
+
+.cbtis-back-link {
+    color: #f472b6;                /* Enlace rosa brillante */
+    font-size: 0.82rem;            /* Tamaño pequeño */
+    text-decoration: none;         /* Sin subrayado */
+    font-weight: 600;              /* Seminegrita */
+}
+
+.cbtis-back-link:hover {
+    text-decoration: underline;    /* Subraya al pasar cursor */
+}
+
+.cbtis-logo-header {
+    text-align: center;            /* Centrado */
+    margin-bottom: 2rem;           /* Margen inferior */
+}
+
+.login-logo-emoji {
+    font-size: 2.2rem;             /* Emoji grande */
+    margin-bottom: 0.2rem;         /* Margen inferior */
+}
+
+.cbtis-logo-header h1 {
+    font-size: 1.3rem;             /* Tamaño título */
+    color: #fff1f2;                /* Claro */
+    font-weight: 700;              /* Negrita */
+}
+
+.cbtis-logo-header h1 span {
+    color: #ec4899;                /* Acento en rosa neón */
+}
+
+.cbtis-input-group {
+    margin-bottom: 1.8rem;         /* Espacio inferior */
+    position: relative;            /* Posicionamiento relativo */
+}
+
+.cbtis-input-group label {
+    display: block;                /* Ocupa su línea */
+    font-size: 0.82rem;            /* Pequeño */
+    color: #fbcfe8;                /* Rosa claro */
+    margin-bottom: 0.3rem;         /* Margen inferior */
+    font-weight: 500;              /* Medio */
+}
+
+.cbtis-input-group input {
+    width: 100%;                   /* Ancho completo */
+    border: none;                  /* Sin borde completo */
+    border-bottom: 1px solid #4c1d95; /* Borde inferior violeta oscuro */
+    padding: 8px 0;                /* Relleno */
+    font-size: 0.95rem;            /* Tamaño de fuente */
+    color: #f1f5f9;                /* Claro */
+    background: transparent;       /* Fondo transparente */
+    outline: none;                 /* Sin contorno */
+    transition: border-color 0.2s; /* Transición suave */
+}
+
+.cbtis-input-group input:focus {
+    border-bottom: 2px solid #ec4899; /* Cambia a borde inferior rosa neón grueso al enfocar */
+}
+
+.cbtis-btn-ingresar {
+    width: 100%;                   /* Ancho completo */
+    background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); /* Degradado magenta/rosa neón */
+    color: white;                  /* Texto blanco */
+    border: none;                  /* Sin bordes */
+    padding: 12px;                 /* Relleno */
+    border-radius: 6px;            /* Esquinas redondeadas */
+    font-weight: 700;              /* Negrita */
+    font-size: 0.95rem;            /* Tamaño */
+    cursor: pointer;               /* Mano interactiva */
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4); /* Sombra magenta */
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s; /* Transiciones */
+    margin-top: 0.5rem;            /* Margen superior */
+}
+
+.cbtis-btn-ingresar:hover {
+    transform: translateY(-2px);   /* Eleva sutilmente */
+    box-shadow: 0 6px 20px rgba(236, 72, 153, 0.6); /* Sombra intensa */
+}
+
+.cbtis-login-help {
+    text-align: center;            /* Centrado */
+    margin-top: 1.8rem;            /* Margen superior */
+    font-size: 0.82rem;            /* Pequeño */
+}
+
+.cbtis-login-help a {
+    color: #f472b6;                /* Rosa brillante */
+    text-decoration: none;         /* Sin subrayado */
+    font-weight: 600;              /* Seminegrita */
+}
+
+.cbtis-login-help a:hover {
+    text-decoration: underline;    /* Subraya al pasar cursor */
+}
+
+/* ======================================================================
+   ESTILOS Y RECORRIDO DE EQUIPO DE PRODUCCIÓN (DOCENTES)
+   ====================================================================== */
+.teachers-section {
+    background: linear-gradient(135deg, #180929 0%, #3b0764 50%, #831843 100%); /* Fondo degradado temático */
+    color: white;                  /* Texto blanco */
+    padding: 4rem 1.5rem;          /* Relleno superior/inferior y lateral */
+}
+
+.teachers-container {
+    max-width: 1200px;             /* Ancho máximo centrado */
+    margin: 0 auto;                /* Centrado horizontal */
+}
+
+.teachers-header {
+    display: flex;                 /* Flexible */
+    justify-content: space-between; /* Separa título de botones */
+    align-items: flex-end;         /* Alineación inferior */
+    margin-bottom: 2.5rem;         /* Margen inferior */
+    flex-wrap: wrap;               /* Adaptable */
+    gap: 1.5rem;                   /* Espacio entre elementos */
+}
+
+.teachers-tag {
+    display: inline-block;         /* Bloque en línea */
+    color: #f472b6;                /* Rosa brillante */
+    font-size: 0.82rem;            /* Pequeño */
+    font-weight: 700;              /* Negrita */
+    text-transform: uppercase;     /* Mayúsculas */
+    margin-bottom: 0.6rem;         /* Margen inferior */
+    letter-spacing: 0.5px;         /* Espaciado de letras */
+}
+
+.convenience-tag-custom {
+    color: #ec4899 !important;     /* Rosa neón específico para convenios */
+}
+
+.teachers-header h2 {
+    font-size: 2.2rem;             /* Título grande */
+    font-weight: 800;              /* Negrita fuerte */
+    margin-bottom: 0.6rem;         /* Margen inferior */
+    letter-spacing: -0.5px;        /* Espaciado ajustado */
+    color: #fff1f2;                /* Claro */
+}
+
+.teachers-header p {
+    color: #fbcfe8;                /* Rosa claro */
+    font-size: 1rem;               /* Estándar */
+    max-width: 700px;              /* Ancho máximo para lectura cómoda */
+    line-height: 1.6;              /* Altura de línea */
+}
+
+.teachers-nav-buttons {
+    display: flex;                 /* Botones en línea */
+    gap: 10px;                     /* Espaciado entre flechas */
+}
+
+.nav-btn {
+    width: 42px;                   /* Ancho fijo circular */
+    height: 42px;                  /* Alto fijo circular */
+    background: rgba(236, 72, 153, 0.15); /* Translúcido magenta */
+    border: 1px solid rgba(236, 72, 153, 0.3); /* Borde translúcido rosa */
+    color: white;                  /* Símbolo blanco */
+    border-radius: 50%;            /* Circular */
+    font-size: 1.4rem;             /* Tamaño de flecha */
+    cursor: pointer;               /* Mano interactiva */
+    display: flex;                 /* Centrado interno */
+    align-items: center;           /* Centrado vertical */
+    justify-content: center;       /* Centrado horizontal */
+    transition: background 0.2s, transform 0.1s, border-color 0.2s; /* Transiciones */
+}
+
+.nav-btn:hover {
+    background: rgba(236, 72, 153, 0.35); /* Aclara al pasar cursor */
+    border-color: #ec4899;         /* Borde rosa neón */
+    transform: scale(1.05);        /* Ligero zoom */
+}
+
+.teachers-grid {
+    display: flex;                 /* Carrusel horizontal flexible */
+    gap: 1.5rem;                   /* Espacio entre tarjetas */
+    overflow-x: auto;              /* Permite scroll horizontal */
+    scroll-behavior: smooth;       /* Movimiento fluido al usar botones */
+    padding-bottom: 1rem;          /* Relleno inferior */
+    scrollbar-width: none;         /* Oculta barra de desplazamiento en Firefox */
+}
+
+.teachers-grid::-webkit-scrollbar {
+    display: none;                 /* Oculta barra de desplazamiento en Chrome/Safari */
+}
+
+.teacher-card {
+    flex: 0 0 calc(25% - 1.15rem); /* Ancho fijo exacto para mostrar 4 tarjetas en pantallas grandes */
+    background: #150a24;           /* Fondo oscuro temático */
+    border-radius: 16px;           /* Bordes redondeados */
+    overflow: hidden;              /* Oculta desbordamientos */
+    border: 1px solid #4c1d95;     /* Borde violeta */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; /* Transiciones */
+}
+
+@media (max-width: 1024px) {
+    .teacher-card {
+        flex: 0 0 calc(43% - 0.75rem); /* Ajusta para mostrar 2 tarjetas en tablets */
+    }
+}
+
+@media (max-width: 650px) {
+    .teacher-card {
+        flex: 0 0 82%;             /* Ajusta para mostrar una tarjeta grande en móviles */
+    }
+}
+
+.teacher-card:hover {
+    transform: translateY(-5px);   /* Eleva la tarjeta al pasar el cursor */
+    box-shadow: 0 15px 30px rgba(236, 72, 153, 0.2); /* Sombra magenta profunda */
+    border-color: #ec4899;         /* Borde rosa neón */
+}
+
+.teacher-card img {
+    width: 100%;                   /* Ancho completo */
+    height: 240px;                 /* Altura fija de la foto */
+    object-fit: cover;             /* Recorte proporcional */
+    object-position: top;          /* Enfoca la parte superior (rostro) de la foto */
+}
+
+.teacher-info {
+    padding: 1.5rem;               /* Relleno interior */
+    background: linear-gradient(180deg, rgba(21, 10, 36, 0.9) 0%, rgba(11, 7, 20, 0.95) 100%); /* Degradado interno */
+}
+
+.teacher-info h3 {
+    font-size: 1.1rem;             /* Nombre */
+    font-weight: 700;              /* Negrita */
+    color: #fff1f2;                /* Claro */
+    margin-bottom: 0.4rem;         /* Margen inferior */
+}
+
+.teacher-info p {
+    font-size: 0.85rem;            /* Descripción */
+    color: #fbcfe8;                /* Rosa claro */
+    line-height: 1.4;              /* Altura de línea */
+}
+
+/* ======================================================================
+   ESTILOS DE CONVENIOS / ALIADOS EN DOBLE LÍNEA (MARQUESINAS INFINITAS)
+   ====================================================================== */
+.convenios-section {
+    padding: 5rem 0;               /* Relleno superior e inferior */
+    background-color: #0b0714;     /* Fondo oscuro profundo */
+    overflow: hidden;              /* Oculta desbordamientos laterales */
+    border-top: 1px solid rgba(236, 72, 153, 0.2); /* Borde superior sutil */
+    border-bottom: 1px solid rgba(236, 72, 153, 0.2); /* Borde inferior sutil */
+}
+
+.convenios-container {
+    max-width: 1200px;             /* Ancho máximo centrado */
+    margin: 0 auto;                /* Centrado horizontal */
+    padding: 0 2rem;               /* Relleno lateral */
+}
+
+.marquee-wrapper {
+    position: relative;            /* Posicionamiento relativo para la marquesina */
+    width: 100%;                   /* Ancho completo */
+    overflow: hidden;              /* Oculta tarjetas fuera de pantalla */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Desvanece los bordes izquierdo y derecho */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); /* Soporte WebKit para desvanecimiento */
+}
+
+.marquee-wrapper-spacing {
+    margin-top: 1.5rem;            /* Separación entre la primera y segunda línea de convenios */
+}
+
+.marquee-track {
+    display: flex;                 /* Elementos en línea horizontal continua */
+    gap: 1.5rem;                   /* Espacio entre tarjetas de marcas */
+    width: max-content;            /* Ancho automático basado en el contenido total */
+}
+
+.marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused !important; /* Pausa el movimiento al pasar el cursor sobre las marcas */
+}
+
+.marquee-track-top {
+    animation: scrollLeft 35s linear infinite; /* Animación continua hacia la izquierda */
+}
+
+.marquee-track-bottom {
+    animation: scrollRight 35s linear infinite; /* Animación continua hacia la derecha (inversa) */
+}
+
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }         /* Inicia en posición original */
+    100% { transform: translateX(-50%); }    /* Desplaza exactamente la mitad (el grupo original) para crear bucle infinito */
+}
+
+@keyframes scrollRight {
+    0% { transform: translateX(-50%); }      /* Inicia desplazado a la mitad */
+    100% { transform: translateX(0); }       /* Regresa a la posición inicial creando bucle fluido */
+}
+
+.convenio-card {
+    background: #150a24;           /* Fondo oscuro para cada tarjeta de empresa */
+    border: 1px solid #4c1d95;     /* Borde violeta */
+    padding: 1.2rem 2rem;          /* Relleno interior generoso */
+    border-radius: 12px;           /* Bordes redondeados */
+    font-weight: 600;              /* Seminegrita */
+    font-size: 1rem;               /* Tamaño estándar */
+    color: #f1f5f9;                /* Color de texto claro */
+    white-space: nowrap;           /* Impide que el texto de la marca haga salto de línea */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra tenue */
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease; /* Transiciones suaves */
+    display: flex;                 /* Flexible */
+    align-items: center;           /* Centrado vertical */
+    justify-content: center;       /* Centrado horizontal */
+    min-width: 190px;              /* Ancho mínimo uniforme para todas las tarjetas */
+}
+
+.convenio-card:hover {
+    transform: translateY(-3px);   /* Eleva la tarjeta al pasar el cursor */
+    border-color: #ec4899;         /* Cambia el borde a rosa neón */
+    background-color: #1f0c36;     /* Fondo ligeramente más claro */
+    color: #f472b6;                /* Texto rosa brillante */
+    box-shadow: 0 10px 20px rgba(236, 72, 153, 0.2); /* Sombra magenta elegante */
+}
